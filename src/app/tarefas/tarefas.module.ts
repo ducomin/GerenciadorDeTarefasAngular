@@ -14,7 +14,8 @@ import { CadastrarTarefaComponent } from './cadastrar';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [
     TarefaService
