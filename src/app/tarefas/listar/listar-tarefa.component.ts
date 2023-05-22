@@ -20,5 +20,12 @@ export class ListarTarefaComponent implements OnInit {
     return this.tarefaService.listarTodos();
   }
 
+  remover($event: any, tarefa: Tarefa): void {
+    $event.preventDefault(); // desabilita atualização da página
+    if (confirm('Deseja remover a tarefa "'+tarefa.nome+'"?')){
+      this.tarefaService.remover(tarefa.id);
+      this.tarefas = this.tarefaService.listarTodos();
+    }
+  }
 
 }
